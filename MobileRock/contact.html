@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact / Request Support</title>
+    <link rel="stylesheet" href="contact.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+        emailjs.init({
+            publicKey: "6zSPnMz7lfY-9VnHC",
+        });
+        })();
+    </script>
+</head>
+    
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <a href="MobileRock.html">← Back to Shop</a>
+    </header>
+
+    <main>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone_number" required>
+        
+            <label for="title">Subject / Title:</label>
+            <input type="text" id="title" name="title" required>
+        
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        
+            <label for="photo">Attach a photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        
+            <button type="submit">Send</button>
+        </form>        
+        
+
+        <div id="status-message"></div>
+    </main>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const form = this;
+            const fileInput = document.getElementById('photo');
+            const file = fileInput.files[0];
+    
+            //  Generate random 12-digit ID
+            const emailId = generateRandomId();
+    
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const base64 = e.target.result;
+    
+                    emailjs.send('service_1e2o9c2', 'template_aj01s3q', {
+                        name: form.name.value,
+                        email: form.email.value,
+                        phone_number: form.phone.value,
+                        title: form.title.value,
+                        message: form.message.value,
+                        photo: base64,
+                        email_id: emailId   //  sending the ID
+                    }).then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        document.getElementById("status-message").innerText = `Your message has been sent! Your Request ID is: ${emailId}`;
+                        form.reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        document.getElementById("status-message").innerText = "Oops! Something went wrong.";
+                    });
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // No file attached
+                emailjs.sendForm('service_1e2o9c2', 'template_aj01s3q', form)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        document.getElementById("status-message").innerText = `Your message has been sent! Your Request ID is: ${emailId}`;
+                        form.reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        document.getElementById("status-message").innerText = "Oops! Something went wrong.";
+                    });
+            }
+        });
+    
+        //  Random 12-digit ID generator
+        function generateRandomId() {
+            return Math.floor(100000000000 + Math.random() * 900000000000).toString();
+        }
+    </script>
+    
+        
+</body>
+</html>

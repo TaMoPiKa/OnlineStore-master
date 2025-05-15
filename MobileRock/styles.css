@@ -1,0 +1,200 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    color: #000000; /* Better contrast for white background */
+}
+
+header, footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1, footer {
+    margin: 0;
+}
+
+.header-buttons, .search-bar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-buttons button, .search-bar button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #250e59;
+    color: #dfc3c3;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.header-buttons button:hover, .search-bar button:hover {
+    background-color: #381c76;
+}
+
+.search-bar input[type="text"] {
+    width: 70%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #381c76;
+    border-radius: 30px;
+    outline: none;
+    color: #5f3232;
+    background-color: #0d0415;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+}
+
+.product h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product button {
+    background-color: #381c76;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.product button:hover {
+    transform: scale(1.05);
+    background-color: #523396;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #e79797;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    color: #333;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #381c76;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #381c76;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #523396;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #555;
+}

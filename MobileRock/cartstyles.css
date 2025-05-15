@@ -1,0 +1,149 @@
+/* Styles for the cart items */
+.cart-item {
+    border: 1px solid #483D8B; /* Dark slate blue border */
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #191970; /* Midnight blue background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 6px;
+}
+
+.cart-item h4 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #fff; /* White text color */
+}
+
+.cart-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #ccc; /* Light grey text color */
+}
+
+#cart {
+    margin: 20px;
+    padding: 20px;
+    background-color: #191970; /* Midnight blue background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    margin: 0 0 20px;
+    font-size: 1.8em;
+    color: #fff; /* White text color */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: #191970; /* Midnight blue background */
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    color: #fff; /* White text color */
+}
+
+.modal-content h2, .modal-content h3, .modal-content label {
+    font-size: 1.5em; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+}
+
+.modal-content input, .modal-content select, .modal-content button {
+    font-size: 1.2em; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    margin-top: 10px;
+}
+
+.modal-content input, .modal-content select {
+    width: calc(100% - 30px);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #483D8B; /* Dark slate blue border */
+    background-color: #0d0415; /* Dark blue input background */
+    color: #fff; /* White text color */
+}
+
+.modal-content button {
+    background-color: #483D8B; /* Dark slate blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #6A5ACD; /* Slate blue on hover */
+}
+
+.close {
+    color: #fff; /* White text color */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ccc; /* Light grey on hover */
+}
+
+/* Button Styles */
+button {
+    background-color: #483D8B; /* Dark slate blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6A5ACD; /* Slate blue on hover */
+}
+
+.remove-item-btn {
+    color: #fff; /* White text color */
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Add some space between the details and the button */
+    display: flex;
+}
+
+.remove-item-btn:hover {
+    background-color: #c51ff8; /* Darker red on hover */
+}

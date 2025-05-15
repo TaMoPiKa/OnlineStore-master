@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shopping Page</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="cartstyles.css">
+</head>
+<body>
+
+<!-- Section to display the user's cart -->
+<div id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button onclick="checkout()">Checkout</button> <!-- Checkout button -->
+</div>
+
+<!-- Modal structure -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Checkout Summary</h2>
+        <div id="cart-summary"></div>
+        <h3>Total Price: $<span id="total-price"></span></h3>
+        <label for="payment-method">Choose a payment method:</label>
+        <select id="payment-method">
+            <option value="1">Visa</option>
+            <option value="2">Mastercard</option>
+            <option value="3">Tinkoff</option>
+            <option value="4">PayPal</option>
+            <option value="5">Crypto</option>
+        </select>
+        <button id="confirm-checkout" onclick="showCredentialsModal()">Confirm Checkout</button>
+    </div>
+</div>
+
+<!-- Modal structure for payment credentials -->
+<div id="credentialsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Enter Payment Details</h2>
+        <div id="credentials-input"></div>
+        <button id="confirm-payment-btn">Confirm Payment</button>
+    </div>
+</div>
+
+<!-- Include the external JavaScript file -->
+<script src="cartscript.js"></script>
+
+</body>
+</html>

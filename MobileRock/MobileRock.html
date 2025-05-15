@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop Online</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script> <!-- Include your JavaScript file -->
+</head>
+<body>
+    <header>
+        <h1>MobileRock</h1>
+        <div class="header-buttons">
+            <button id="login-btn">Login</button>
+            <button id="logout-btn">Logout</button>
+            <button id="register-btn">Register</button>
+            <button id="cart-list">View Cart</button>
+            <button id="toggle-spare-parts-btn">Spare Parts</button>
+            <a href="contact.html"><button id="contact-btn">Contact Us</button></a>
+        </div>
+        
+    </header>
+    <!-- Modal for Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- End of Login Modal -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-btn">Search</button>
+    </div>
+    <main>
+        <div id="product-list"></div>
+    </main>
+
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="register-close">&times;</span>
+            <form id="register-form">
+                <h2>Register</h2>
+                <label for="register-name">Name:</label>
+                <input type="text" id="register-name" name="name" required>
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" name="username" required>
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
